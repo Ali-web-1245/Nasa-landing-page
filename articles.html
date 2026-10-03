@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space & Science Articles — NASA Inspired</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand"><span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span></a>
+      <div class="nav-menu" id="navMenu">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./missions.html" class="nav-link">Missions</a>
+        <a href="./news.html" class="nav-link">News</a>
+        <a href="./gallery.html" class="nav-link">Gallery</a>
+        <a href="./articles.html" class="nav-link active">Articles</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero hero-sub overlay-dark" style="background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600&auto=format&fit=crop');">
+    <div class="hero-content text-center">
+      <h1 class="hero-title fade-in-up">SCIENCE & RESEARCH</h1>
+      <p class="hero-subtitle fade-in-up delay-1">In-depth essays, technical breakdowns, and scientific perspectives.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- Topics Pills -->
+      <div class="popular-topics reveal">
+        <span>Popular Topics:</span>
+        <button class="topic-pill active" data-topic="all">All Topics</button>
+        <button class="topic-pill" data-topic="Astrophysics">Astrophysics</button>
+        <button class="topic-pill" data-topic="Astrobiology">Astrobiology</button>
+        <button class="topic-pill" data-topic="Engineering">Engineering</button>
+        <button class="topic-pill" data-topic="Planetary Science">Planetary Science</button>
+      </div>
+
+      <div class="grid grid-3" id="articlesGrid">
+        <!-- Articles dynamically populated via JS -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 NASA Inspired Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up-long"></i>./</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Articles page dynamic population
+    const articlesData = [
+      {
+        title: "Understanding Black Hole Event Horizons",
+        category: "Astrophysics",
+        date: "Sept 18, 2026",
+        author: "Dr. Elena Rostova",
+        img: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=600&auto=format&fit=crop",
+        desc: "How radio telescope arrays capture shadow boundary physics of supermassive gravitational wells."
+      },
+      {
+        title: "Is Life Possible Under Europa's Crust?",
+        category: "Astrobiology",
+        date: "Sept 12, 2026",
+        author: "Marcus Vance",
+        img: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=600&auto=format&fit=crop",
+        desc: "Examining hydro-thermal vents beneath Jupiter's ocean moon."
+      },
+      {
+        title: "Next-Gen Nuclear Thermal Propulsion",
+        category: "Engineering",
+        date: "Aug 29, 2026",
+        author: "Sarah Chen",
+        img: "https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=600&auto=format&fit=crop",
+        desc: "Reducing transit times to Mars by 50% using low-enriched uranium fuel cores."
+      },
+      {
+        title: "Mapping Exoplanet Weather Patterns",
+        category: "Planetary Science",
+        date: "Aug 15, 2026",
+        author: "Dr. Alan Grant",
+        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
+        desc: "How spectroscopy detects 1000 mph iron rains on ultra-hot gas giants."
+      },
+      {
+        title: "The Physics of Solar Flares & Geomagnetic Storms",
+        category: "Astrophysics",
+        date: "July 22, 2026",
+        author: "Dr. Elena Rostova",
+        img: "https://images.unsplash.com/photo-1538370965046-79c0d6907d47?q=80&w=600&auto=format&fit=crop",
+        desc: "Understanding coronal mass ejections and protecting national satellite grids."
+      },
+      {
+        title: "Designing Autonomous Rovers for Extreme Terrain",
+        category: "Engineering",
+        date: "July 04, 2026",
+        author: "Marcus Vance",
+        img: "https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?q=80&w=600&auto=format&fit=crop",
+        desc: "AI pathfinding systems navigating treacherous cliffs and sand traps without human lag."
+      }
+    ];
+
+    function renderArticles(filter = 'all') {
+      const grid = document.getElementById('articlesGrid');
+      if(!grid) return;
+      grid.innerHTML = '';
+      const filtered = filter === 'all' ? articlesData : articlesData.filter(a => a.category === filter);
+
+      filtered.forEach(art => {
+        const card = document.createElement('div');
+        card.className = 'card reveal';
+        card.innerHTML = `
+          <div class="card-img"><img src="${art.img}" alt="${art.title}"></div>
+          <div class="card-body">
+            <span class="badge">${art.category}</span>
+            <h3 class="card-title">${art.title}</h3>
+            <p class="date-text">By ${art.author} • ${art.date}</p>
+            <p>${art.desc}</p>
+            <a href="#" class="card-link">Read Full Essay &rarr;</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      // trigger reveals
+      const reveals = grid.querySelectorAll('.reveal');
+      reveals.forEach(r => r.classList.add('active'));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderArticles();
+      document.querySelectorAll('.topic-pill').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('active'));
+          e.target.classList.add('active');
+          renderArticles(e.target.dataset.topic);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

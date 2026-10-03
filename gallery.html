@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Space Gallery — NASA Inspired</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand"><span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span></a>
+      <div class="nav-menu" id="navMenu">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./missions.html" class="nav-link">Missions</a>
+        <a href="./news.html" class="nav-link">News</a>
+        <a href="./gallery.html" class="nav-link active">Gallery</a>
+        <a href="./articles.html" class="nav-link">Articles</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero hero-sub overlay-dark" style="background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop');">
+    <div class="hero-content text-center">
+      <h1 class="hero-title fade-in-up">SPACE GALLERY</h1>
+      <p class="hero-subtitle fade-in-up delay-1">Explore breathtaking images captured across our solar system and beyond.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar reveal" id="galleryFilterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Earth">Earth</button>
+        <button class="filter-btn" data-filter="Moon">Moon</button>
+        <button class="filter-btn" data-filter="Mars">Mars</button>
+        <button class="filter-btn" data-filter="Galaxy">Galaxy</button>
+        <button class="filter-btn" data-filter="Astronauts">Astronauts</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rendered dynamically via js/gallery.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous Image">&#10094;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next Image">&#10095;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 NASA Inspired Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up-long"></i>./</button>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/gallery.js"></script>
+</body>
+</html>

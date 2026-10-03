@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the universe, discoveries, space science, and humanity's journey beyond Earth with NASA Inspired.">
+  <title>NASA Inspired — Explore the Universe</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand">
+        <span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="./index.html" class="nav-link active">Home</a>
+        <a href="./missions.html" class="nav-link">Missions</a>
+        <a href="./news.html" class="nav-link">News</a>
+        <a href="./gallery.html" class="nav-link">Gallery</a>
+        <a href="./articles.html" class="nav-link">Articles</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Search Bar Dropdown -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-box">
+        <input type="text" id="globalSearchInput" placeholder="Search missions, news, articles..." autocomplete="off">
+        <button id="closeSearch">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero hero-home overlay-dark">
+    <div class="hero-content text-center">
+      <span class="badge fade-in-up">Deep Space Exploration</span>
+      <h1 class="hero-title fade-in-up delay-1">EXPLORE THE UNIVERSE</h1>
+      <p class="hero-subtitle fade-in-up delay-2">
+        Discover space, science, technology, and humanity's continuous journey beyond Earth's frontier.
+      </p>
+      <div class="hero-cta fade-in-up delay-3">
+        <a href="./missions.html" class="btn btn-primary">Explore Missions</a>
+        <a href="././news.html" class="btn btn-outline">Latest News</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+    </div>
+  </header>
+
+  <!-- Image Slider Section -->
+  <section class="section slider-section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2>DISCOVERY HIGHLIGHTS</h2>
+        <p>Featured images from our orbital observatories and planetary rovers</p>
+      </div>
+      <div class="slider-container reveal" id="heroSlider">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1600&auto=format&fit=crop')">
+            <div class="slide-caption">
+              <h3>The Carina Nebula in High Resolution</h3>
+              <p>Infrared view capturing star formation regions with unprecedented detail.</p>
+            </div>
+          </div>
+          <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1600&auto=format&fit=crop')">
+            <div class="slide-caption">
+              <h3>Earth from Space Station Orbit</h3>
+              <p>A serene glimpse of our blue planet floating against the vacuum of deep space.</p>
+            </div>
+          </div>
+          <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?q=80&w=1600&auto=format&fit=crop')">
+            <div class="slide-caption">
+              <h3>Martian Dune Landscapes</h3>
+              <p>Rover panoramas showing layered rock formations inside Jezero Crater.</p>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide">&#10094;</button>
+        <button class="slider-btn next" id="sliderNext" aria-label="Next Slide">&#10095;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Stories -->
+  <section class="section bg-darker">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>FEATURED STORIES</h2>
+        <p>Highlights from ongoing research and deep space exploration</p>
+      </div>
+      <div class="grid grid-3" id="homeStoriesGrid">
+        <!-- Rendered via JavaScript main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Missions -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2>FLAGSHIP MISSIONS</h2>
+        <p>Pushing the frontiers of science, human spaceflight, and robotic scouting</p>
+      </div>
+      <div class="grid grid-4" id="homeMissionsGrid">
+        <!-- Rendered via JavaScript main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Space Feature Section -->
+  <section class="section feature-banner overlay-dark" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1800&auto=format&fit=crop');">
+    <div class="container reveal">
+      <div class="feature-box text-center">
+        <h2>HUMANITY’S GREATEST ADVENTURE</h2>
+        <p>From the icy moons of Jupiter to deep-space exoplanet atmospheres, our sensors are unlocking the origin of life and the fate of the cosmos.</p>
+        <a href="./about.html" class="btn btn-primary">Discover Our Purpose</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="section stats-section">
+    <div class="container">
+      <div class="grid grid-4 text-center">
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Active Missions</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">Major Discoveries</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="20">0</div>
+          <div class="stat-label">Active Spacecraft</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="1000">0</div>
+          <div class="stat-label">Research Grants</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="section cta-section bg-red">
+    <div class="container text-center reveal">
+      <h2>THE UNIVERSE IS WAITING</h2>
+      <p>Join millions of explorers following our journey beyond the blue marble.</p>
+      <a href="./contact.html" class="btn btn-light">Start Exploring Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4 footer-top">
+        <div class="footer-brand">
+          <span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span>
+          <p>Inspiring humanity through space discovery, breakthrough engineering, and scientific excellence.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./missions.html">Missions</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./articles.html">Articles</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal & Policy</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">FOIA Data</a></li>
+            <li><a href="#">No FEAR Act</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Our Journey</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 NASA Inspired Website. Code base fully customizable and open source.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up-long"></i></button>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

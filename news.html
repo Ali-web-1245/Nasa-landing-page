@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA News & Updates — NASA Inspired</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand"><span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span></a>
+      <div class="nav-menu" id="navMenu">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./missions.html" class="nav-link">Missions</a>
+        <a href="./news.html" class="nav-link active">News</a>
+        <a href="./gallery.html" class="nav-link">Gallery</a>
+        <a href="./articles.html" class="nav-link">Articles</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero hero-sub overlay-dark" style="background-image: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1600&auto=format&fit=crop');">
+    <div class="hero-content text-center">
+      <h1 class="hero-title fade-in-up">NASA NEWS HUB</h1>
+      <p class="hero-subtitle fade-in-up delay-1">Discover breaking stories, scientific research, and mission updates.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-filter-wrapper reveal">
+        <input type="text" id="newsSearchInput" class="form-input search-bar-page" placeholder="Search news articles...">
+        <div class="filter-bar" id="newsFilterBar">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="Space">Space</button>
+          <button class="filter-btn" data-category="Earth">Earth</button>
+          <button class="filter-btn" data-category="Science">Science</button>
+          <button class="filter-btn" data-category="Technology">Technology</button>
+        </div>
+      </div>
+
+      <!-- Featured Story -->
+      <div class="featured-news-card reveal" id="featuredNews">
+        <div class="featured-news-img">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" alt="Featured News Image">
+        </div>
+        <div class="featured-news-body">
+          <span class="badge">BREAKING NEWS</span>
+          <h2>Webb Telescope Detects Atmospheric Water Vapor on Rocky Exoplanet</h2>
+          <p class="date-text">October 2, 2026</p>
+          <p>Spectroscopic analysis reveals clear signs of water signatures surrounding a Earth-sized world orbiting in a nearby habitable zone system...</p>
+          <a href="#" class="btn btn-primary margin-top">Read Story</a>
+        </div>
+      </div>
+
+      <div class="grid grid-3" id="newsGrid">
+        <!-- Rendered dynamically via js/news.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="section bg-darker text-center">
+    <div class="container reveal">
+      <h2>SUBSCRIBE TO NASA INSPIRED BREAKING NEWS</h2>
+      <p>Get daily updates sent straight to your inbox.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your email address" required class="form-input">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 NASA Inspired Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up-long"></i></button>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/news.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Missions — NASA Inspired</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand"><span class="logo-text"><span class="brand-red">NASA</span><img src="./images/logo.png" alt="logo"></span></a>
+      <div class="nav-menu" id="navMenu">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./missions.html" class="nav-link active">Missions</a>
+        <a href="./news.html" class="nav-link">News</a>
+        <a href="./gallery.html" class="nav-link">Gallery</a>
+        <a href="./articles.html" class="nav-link">Articles</a>
+        <a href="./about.html" class="nav-link">About</a>./
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-box">
+        <input type="text" id="globalSearchInput" placeholder="Search missions, news, articles..." autocomplete="off">
+        <button id="closeSearch">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero hero-sub overlay-dark" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop');">
+    <div class="hero-content text-center">
+      <h1 class="hero-title fade-in-up">SPACE MISSIONS</h1>
+      <p class="hero-subtitle fade-in-up delay-1">Explore humanity's robot scouting and crewed missions beyond Earth.</p>
+    </div>
+  </header>
+
+  <!-- Filters & Mission Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Moon">Moon</button>
+        <button class="filter-btn" data-filter="Mars">Mars</button>
+        <button class="filter-btn" data-filter="Earth">Earth</button>
+        <button class="filter-btn" data-filter="Space Telescope">Telescopes</button>
+        <button class="filter-btn" data-filter="Technology">Technology</button>
+      </div>
+
+      <div class="grid grid-3" id="missionsGrid">
+        <!-- Loaded via js/missions.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Mission -->
+  <section class="section bg-darker">
+    <div class="container">
+      <div class="two-col-layout reveal">
+        <div class="col-img">
+          <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=1000&auto=format&fit=crop" alt="Artemis Rocket Launch" class="img-responsive rounded">
+        </div>
+        <div class="col-text">
+          <span class="badge">FEATURED MISSION</span>
+          <h2>Artemis Program: Returning to the Moon</h2>
+          <p>With Artemis, NASA is landing the first woman and first person of color on the Moon, using innovative technologies to explore more of the lunar surface than ever before. We will collaborate with commercial and international partners to establish the first long-term presence on the Moon.</p>
+          <a href="#" class="btn btn-primary margin-top">Read Full Mission Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2>HISTORIC EXPLORATION TIMELINE</h2>
+        <p>Milestones that shaped humanity's access to the vacuum of space</p>
+      </div>
+      <div class="timeline" id="missionTimeline">
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <span class="timeline-date">1969</span>
+            <h3>Apollo 11 Landing</h3>
+            <p>Humans land on the lunar surface for the first time in recorded history.</p>
+          </div>
+        </div>
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <span class="timeline-date">1990</span>
+            <h3>Hubble Telescope Launch</h3>
+            <p>The space telescope revolutionizes astronomy from low Earth orbit.</p>
+          </div>
+        </div>
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <span class="timeline-date">2012</span>
+            <h3>Curiosity Lands on Mars</h3>
+            <p>Targeted sky-crane touchdown opens a new era of Martian geology.</p>
+          </div>
+        </div>
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <span class="timeline-date">2021</span>
+            <h3>James Webb Telescope Launch</h3>
+            <p>Next-generation infrared astronomy begins peering into early cosmic time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 NASA Inspired Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up-long"></i>./</button>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/missions.js"></script>
+</body>
+</html>
